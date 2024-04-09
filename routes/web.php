@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\LinkController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -14,4 +15,7 @@ Route::middleware([
     Route::get('/dashboard', function () {
         return view('dashboard');
     })->name('dashboard');
+
+    Route::resource('links', LinkController::class)->names('links');
+    Route::get('/links/{link}', [LinkController::class, 'visit'])->name('links.visit');
 });
