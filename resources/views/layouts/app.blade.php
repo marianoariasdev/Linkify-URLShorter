@@ -34,7 +34,13 @@
 
             <!-- Page Content -->
             <main>
-                {{ $slot }}
+                <div class="py-6">
+                    <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 text-white">
+                        <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-xl sm:rounded-lg p-12">
+                            {{ $slot }}
+                        </div>
+                    </div>
+                </div>
             </main>
         </div>
 
