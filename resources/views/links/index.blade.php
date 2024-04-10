@@ -41,15 +41,22 @@
                     <td class="px-6 py-4">
                         {{ $link->original_url }}
                     </td>
-                    <td class="px-6 py-4">
+                    <td class="px-6 py-4 flex gap-2 items-center">
                         {{ env('DOMAIN') }}/links/{{ $link->short_url }}
+                        <button class="bg-gray-600 p-2 w-8 h-8 rounded hover:scale-110 hover:bg-gray-500 transition duration-300">
+                            <img src="{{ asset('icons/Copy.svg') }}" alt="copy icon" title="Copy">
+                        </button>
                     </td>
                     <td class="px-6 py-4">
                         {{ $link->visit_counter }}
                     </td>
                     <td class="flex gap-2 px-6 py-4">
-                        <a href="{{ $link->original_url }}" target="_blank">Ir</a>
-                        <a href="">Editar</a>
+                        <a href="{{ $link->original_url }}" target="_blank" class="bg-gray-600 p-2 w-8 h-8 rounded hover:scale-110 hover:bg-green-500 transition duration-300">
+                            <img src="{{ asset('icons/ExternalLink.svg') }}" alt="external link icon" title="Go">
+                        </a>
+                        <a href="" class="bg-gray-600 p-2 w-8 h-8 rounded hover:scale-110 hover:bg-yellow-500 transition duration-300">
+                            <img src="{{ asset('icons/Edit.svg') }}" alt="edit icon" title="Edit">
+                        </a>
                     </td>
                 </tr>
                 @endforeach
